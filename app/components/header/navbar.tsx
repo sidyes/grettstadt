@@ -2,96 +2,54 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="fixed w-full z-20 top-0 start-0 bg-gray-900/50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="fixed top-0 left-0 w-full z-30 bg-gray-800 bg-opacity-75 backdrop-blur-md shadow-md">
+      <div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center">
+        <Link href="/" className="text-2xl font-semibold text-white">
+          MeinEinfamilienhaus
+        </Link>
+        <div className="hidden md:flex space-x-8">
+          <NavLink href="/#lage" label="Lage" />
+          <NavLink href="/#eckdaten" label="Eckdaten" />
+          <NavLink href="/#erdgeschoss" label="Erdgeschoss" />
+          <NavLink href="/#obergeschoss" label="Obergeschoss" />
+          <NavLink href="/#untergeschoss" label="Untergeschoss" />
+          <NavLink href="/#dachboden" label="Dachboden" />
+          <NavLink href="/#aussenbereich" label="Außenbereich" />
+        </div>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-default"
-          aria-expanded="false"
+          className="inline-flex md:hidden items-center p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-600"
         >
           <span className="sr-only">Open main menu</span>
           <svg
-            className="w-5 h-5"
+            className="w-6 h-6"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 17 14"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
             <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
             />
           </svg>
         </button>
-        <div
-          className="items-center justify-between hidden w-full md:flex md:order-1"
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 w-full items-center justify-center list-none">
-            <li>
-              <Link
-                href="/#lage"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Lage
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#eckdaten"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Eckdaten
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#erdgeschoss"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Erdgeschoss
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#obergeschoss"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Obergeschoss
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#untergeschoss"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Untergeschoss
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#dachboden"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Dachoben
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#aussenbereich"
-                className="block py-2 px-3 text-white rounded"
-              >
-                Außenbereich
-              </Link>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
+  );
+}
+
+function NavLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link href={href} className="text-white relative group no-underline">
+      <span className="transition-all duration-300 ease-in-out group-hover:text-blue-300">
+        {label}
+      </span>
+      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-300 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+    </Link>
   );
 }

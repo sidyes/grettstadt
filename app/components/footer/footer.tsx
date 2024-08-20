@@ -2,27 +2,25 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900/50 rounded-lg shadow">
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <ul className="flex p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:mt-0 md:border-0 items-center justify-center w-full list-none">
-          <li>
-            <Link
-              href="/impressum"
-              className="block py-2 px-3 text-white rounded"
-            >
-              Impressum
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="/kontakt"
-              className="block py-2 px-3 text-white rounded"
-            >
-              Kontakt
-            </Link>
-          </li>
-        </ul>
+    <footer className="bg-gray-800 text-white py-6">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+        <p className="text-sm">
+          &copy; 2024 MeinEinfamilienhaus. Alle Rechte vorbehalten.
+        </p>
+        <div className="flex space-x-4 mt-4 md:mt-0">
+          <Link
+            href="/impressum"
+            className="hover:text-blue-300 transition-colors duration-300 no-underline"
+          >
+            Impressum
+          </Link>
+          <Link
+            href="/kontakt"
+            className="hover:text-blue-300 transition-colors duration-300 no-underline"
+          >
+            Kontakt
+          </Link>
+        </div>
       </div>
     </footer>
   );

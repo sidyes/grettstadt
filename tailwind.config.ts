@@ -12,14 +12,29 @@ const config: Config = {
   },
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-inter)"],
-        mono: ["var(--font-roboto-mono)"],
+      colors: {
+        primary: '#1a202c', // Dunkles Grau für Headlines
+        secondary: '#4a5568', // Mittelgrau für Sub-Headlines und Texte
+        accent: '#2b6cb0', // Seriöses Blau für Akzente, Buttons, Links
+        background: '#f7fafc', // Sehr helles Grau für Hintergrund
+        border: '#e2e8f0', // Hellgrau für Ränder
+        light: '#edf2f7', // Sehr helles Grau für zusätzliche Akzente
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // Moderne, gut lesbare Schriftart
+        serif: ['Merriweather', 'serif'], // Optional für klassischere Elemente
+      },
+      fontSize: {
+        base: '16px', // Standardgröße für Fließtext
+        lg: '18px',  // Leicht größere Schrift für bessere Lesbarkeit
+        xl: '20px',  // Für wichtige Absätze
+        '2xl': '24px', // Sub-Headlines
+        '3xl': '30px', // Haupt-Headlines
+        '4xl': '36px', // Für besonders wichtige Headlines
+      },
+      spacing: {
+        'section': '4rem', // Abstände zwischen den Sektionen
+        'paragraph': '1.5rem', // Abstand zwischen den Absätzen
       },
     },
   },

@@ -2,19 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  margin: 0;
+  @apply bg-background text-secondary font-sans m-0;
 }
 
-@layer base {
-  h2 {
-    @apply text-4xl font-bold;
-  }
+h1, h2, h3, h4 {
+  @apply text-primary font-serif font-bold;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+h4 {
+  @apply text-lg;
+}
+
+p {
+  @apply text-base leading-relaxed mb-paragraph;
+}
+
+a {
+  @apply text-accent underline;
+}
+
+button {
+  @apply bg-accent text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors;
+}
+
+section {
+  @apply mb-section;
+}
+
+.container {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+.border-box {
+  @apply border border-border p-4 rounded-lg shadow-md;
 }
