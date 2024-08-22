@@ -14,12 +14,6 @@ export default function Footer() {
           >
             Impressum
           </Link>
-          <Link
-            href="/kontakt"
-            className="hover:text-blue-300 transition-colors duration-300 no-underline"
-          >
-            Kontakt
-          </Link>
         </div>
       </div>
     </footer>
