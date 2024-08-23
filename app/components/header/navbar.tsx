@@ -6,11 +6,12 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center">
         <div className="text-3xl font-bold text-white py-4">
           Einfamilienhaus <br />
-          <span className="text-lg font-light">Wilhelm-Schröder-Straße, Grettstadt</span>
+          <span className="text-lg font-light">
+            Wilhelm-Schröder-Straße, Grettstadt
+          </span>
         </div>
         <div className="hidden md:flex space-x-8">
-          <NavLink href="/#lage" label="Lage" />
-          <NavLink href="/#eckdaten" label="Eckdaten" />
+          <NavLink href="/#lage" label="Lage & Eckdaten" />
           <NavLink href="/#erdgeschoss" label="Erdgeschoss" />
           <NavLink href="/#obergeschoss" label="Obergeschoss" />
           <NavLink href="/#untergeschoss" label="Untergeschoss" />

@@ -15,31 +15,42 @@ export default function Home() {
       <Header />
       <main className="flex flex-col justify-between p-8 space-y-16">
         <section id="lage" className="container">
-          <h2 className="text-2xl font-bold text-primary">Lage</h2>
-          <p className="text-base text-secondary leading-relaxed mb-paragraph">
-            Dieses wunderbare Zuhause befindet sich in einer äußerst ruhigen
-            Spielstraße. Das Nachbargrundstück besteht aus einem unbebauten
-            Garten, der zusätzliche Ruhe und Privatsphäre gewährleistet. Alle
-            wichtigen Einrichtungen sind bequem zu Fuß erreichbar. Grundschule
-            und Kindergarten sind nur 800 Meter entfernt, und ein Supermarkt
-            liegt in lediglich 240 Metern Entfernung.
-          </p>
-          <Image
-            src={sampleImage}
-            alt="Lage Bild"
-            className="rounded-lg shadow-md"
-          />
-        </section>
+          <h2 className="text-2xl font-bold text-primary">Lage & Eckdaten</h2>
 
-        <section id="eckdaten" className="container">
-          <h2 className="text-2xl font-bold text-primary">Eckdaten</h2>
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <iframe
+              className="w-full h-96"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Wilhelm-Schröder-Straße 9 grettstadt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+            <p className="text-base text-secondary leading-relaxed mb-paragraph">
+              Dieses wunderbare Zuhause befindet sich in einer äußerst ruhigen
+              Spielstraße. Das Nachbargrundstück besteht aus einem unbebauten
+              Garten, der zusätzliche Ruhe und Privatsphäre gewährleistet. Alle
+              wichtigen Einrichtungen sind bequem zu Fuß erreichbar.{" "}
+              <span className="font-bold">Grundschule</span> und{" "}
+              <b>Kindergarten</b> sind nur 800 Meter entfernt, und ein
+              Supermarkt liegt in lediglich 240 Metern Entfernung.
+            </p>
+          </div>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Das Haus steht auf einem Grundstück von 873 m² und bietet eine
             Wohnfläche von 195 m² sowie eine zusätzliche Nutzfläche von 165 m².
             Es wurde im Jahr 2000 erbaut und verfügt über eine zentrale
             Ölheizung.
           </p>
-          <VideoPlayer src="/videos/eckdaten.mp4" alt="Eckdaten Video" />
+          <iframe
+            className="h-[500px] my-4 w-full rounded-lg shadow-md"
+            src="https://www.youtube.com/embed/lFS8rPT2K8A?si=uZOCKrCnCFnC1V_H&amp;controls=1&autoplay=1&loop=1&playlist=lFS8rPT2K8A"
+            title="Grettstadt Einfamilienhaus - Exposé"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </section>
 
         <section id="erdgeschoss" className="container">
@@ -98,11 +109,6 @@ export default function Home() {
             Der Dachboden ist zusätzlich isoliert und das Dach ist vollflächig
             mit Pavatex-Unterdeckplatten belegt.
           </p>
-          <Image
-            src={sampleImage}
-            alt="Dachboden Bild"
-            className="rounded-lg shadow-md"
-          />
         </section>
 
         <section id="aussenbereich" className="container">
