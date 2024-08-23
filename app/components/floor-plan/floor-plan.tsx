@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface FloorPlanProps {
-  src: string;
+  src: StaticImageData;
   alt: string;
 }
 
@@ -11,9 +11,9 @@ export default function FloorPlan({ src, alt }: FloorPlanProps) {
       <Image
         src={src}
         alt={alt}
-        width={800} // Passe die Größe entsprechend an
+        width={800}
         height={600}
-        className="rounded-lg shadow-md"
+        className="rounded-lg shadow-xl"
       />
     </div>
   );

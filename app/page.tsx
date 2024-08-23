@@ -2,6 +2,9 @@ import Image from "next/image";
 import VideoPlayer from "./components/video-player/video-player";
 import FloorPlan from "./components/floor-plan/floor-plan";
 import sampleImage from "./images/header.jpg";
+import ogImage from "./images/floor-plans/og.jpg";
+import egImage from "./images/floor-plans/eg.jpg";
+import kgImage from "./images/floor-plans/kg.jpg";
 import Contact from "./components/contact/contact";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
@@ -56,10 +59,7 @@ export default function Home() {
             geflieste Garage mit Waschbecken bieten zusätzlichen Komfort. Alle
             Fenster sind mit Außenrollos versehen.
           </p>
-          <FloorPlan
-            src="/floorplans/erdgeschoss.png"
-            alt="Erdgeschoss Grundriss"
-          />
+          <FloorPlan src={egImage} alt="Erdgeschoss Grundriss" />
         </section>
 
         <section id="obergeschoss" className="container">
@@ -74,10 +74,7 @@ export default function Home() {
             bietet zusätzlichen Stauraum. Alle Fenster im Obergeschoss sind
             ebenfalls mit Außenrollos versehen.
           </p>
-          <FloorPlan
-            src="/floorplans/obergeschoss.png"
-            alt="Obergeschoss Grundriss"
-          />
+          <FloorPlan src={ogImage} alt="Obergeschoss Grundriss" />
         </section>
 
         <section id="untergeschoss" className="container">
@@ -92,10 +89,7 @@ export default function Home() {
             ausgestattet. Ein separates Badezimmer mit Waschmaschinenanschluss
             ist ebenfalls vorhanden.
           </p>
-          <FloorPlan
-            src="/floorplans/untergeschoss.png"
-            alt="Untergeschoss Grundriss"
-          />
+          <FloorPlan src={kgImage} alt="Untergeschoss Grundriss" />
         </section>
 
         <section id="dachboden" className="container">
