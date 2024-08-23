@@ -123,7 +123,7 @@ export default function Home() {
           <Image
             src={sampleImage}
             alt="Außenbereich Bild"
-            className="rounded-lg shadow-md"
+            className="rounded-lg shadow-md w-full"
           />
           <VideoPlayer
             src="/videos/aussenbereich.mp4"
