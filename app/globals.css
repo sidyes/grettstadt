@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-pt-[123px]  xl:scroll-pt-[136px];
+
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-slate-100 text-secondary font-sans m-0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply text-primary font-serif font-bold;
 }
 
@@ -43,7 +52,7 @@ section {
 }
 
 .container {
-  @apply lg:max-w-5xl mx-auto px-4;
+  @apply lg:max-w-5xl mx-auto;
 }
 
 .border-box {
