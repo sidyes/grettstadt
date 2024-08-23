@@ -14,13 +14,12 @@ export default function Home() {
     <>
       <Header />
       <main className="flex flex-col justify-between p-8 space-y-16">
-        <section id="lage" className="container">
+        <section id="lage" className="container mb-0">
           <h2 className="text-2xl font-bold text-primary">Lage & Eckdaten</h2>
 
           <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
             <iframe
               className="w-full h-96"
-              scrolling="no"
               src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Wilhelm-Schröder-Straße 9 grettstadt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
             <p className="text-base text-secondary leading-relaxed mb-paragraph">
@@ -40,7 +39,7 @@ export default function Home() {
             Ölheizung.
           </p>
           <iframe
-            className="h-[500px] my-4 w-full rounded-lg shadow-md"
+            className="h-[500px] w-full rounded-lg shadow-md"
             src="https://www.youtube.com/embed/lFS8rPT2K8A?si=uZOCKrCnCFnC1V_H&amp;controls=1&autoplay=1&loop=1&playlist=lFS8rPT2K8A"
             title="Grettstadt Einfamilienhaus - Exposé"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   return (
@@ -17,6 +18,14 @@ export default function Navbar() {
           <NavLink href="/#untergeschoss" label="Untergeschoss" />
           <NavLink href="/#dachboden" label="Dachboden" />
           <NavLink href="/#aussenbereich" label="Außenbereich" />
+          <Link
+            href="/#kontakt"
+            className="text-white relative group no-underline"
+          >
+            <EnvelopeIcon className="size-5 transition-all duration-300 ease-in-out group-hover:text-blue-300" />
+
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-300 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          </Link>
         </div>
         <button
           data-collapse-toggle="navbar-default"
