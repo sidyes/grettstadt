@@ -20,6 +20,7 @@ export default function Contact() {
       });
       if (res.status === 200) {
         setStatus("ok");
+        myForm.reset();
       } else {
         setStatus("error");
         setError(`${res.status} ${res.statusText}`);
@@ -99,55 +100,14 @@ export default function Contact() {
         </div>
       </form>
       {status === "ok" && (
-        <div className="alert alert-success">
-          <SuccessIcon />
-          <p className="text-gray-700 text-lg">
+        <div className="alert">
+          <p className="text-green-600">
             Ihre Nachricht wurde erfolgreich gesendet. <br />
             Wir werden uns so schnell wie möglich bei Ihnen melden.
           </p>
         </div>
       )}
-      {status === "error" && (
-        <div className="alert alert-error">
-          <ErrorIcon />
-          {error}
-        </div>
-      )}
+      {status === "error" && <div className="text-red-600">{error}</div>}
     </div>
-  );
-}
-
-function SuccessIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="stroke-current shrink-0 h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
-  );
-}
-function ErrorIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="stroke-current shrink-0 h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
   );
 }
