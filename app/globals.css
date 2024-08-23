@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background text-secondary font-sans m-0;
+  @apply bg-slate-100 text-secondary font-sans m-0;
 }
 
 h1, h2, h3, h4 {
