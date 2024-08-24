@@ -20,18 +20,23 @@ export default function Navbar() {
         <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white py-2 md:py-4">
           Einfamilienhaus <br />
           <span className="text-xs sm:text-sm xl:text-lg font-light">
-            Wilhelm-Schröder-Straße, Grettstadt
+            <span className="block">195 m² Wohnfläche</span>
+            <span className="block">165 m² Nutzfläche</span>
+            <span className="block">873 m² Grundstücksfläche</span>
+            <span className="block">Baujahr 2000</span>
           </span>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-4 xl:space-x-8">
-          <NavLink href="/#lage" label="Lage & Eckdaten" />
+          <NavLink href="/#lage" label="Lage" />
+          <NavLink href="/#aussenbereich" label="Außenbereich" />
           <NavLink href="/#erdgeschoss" label="Erdgeschoss" />
           <NavLink href="/#obergeschoss" label="Obergeschoss" />
           <NavLink href="/#untergeschoss" label="Untergeschoss" />
           <NavLink href="/#dachboden" label="Dachboden" />
-          <NavLink href="/#aussenbereich" label="Außenbereich" />
+          <NavLink href="/#energieausweis" label="Energieausweis" />
+          <NavLink href="/#preis" label="Preis" />
           <Link
             href="/#kontakt"
             className="text-white relative group no-underline"
@@ -72,9 +77,10 @@ export default function Navbar() {
         } overflow-hidden transition-all duration-300 ease-in-out bg-gray-700 lg:hidden`}
       >
         <div className="flex flex-col items-center space-y-4 py-6">
+          <NavLink href="/#lage" label="Lage" closeMenu={closeMenu} />
           <NavLink
-            href="/#lage"
-            label="Lage & Eckdaten"
+            href="/#aussenbereich"
+            label="Außenbereich"
             closeMenu={closeMenu}
           />
           <NavLink
@@ -94,10 +100,11 @@ export default function Navbar() {
           />
           <NavLink href="/#dachboden" label="Dachboden" closeMenu={closeMenu} />
           <NavLink
-            href="/#aussenbereich"
-            label="Außenbereich"
+            href="/#energieausweis"
+            label="Energieausweis"
             closeMenu={closeMenu}
           />
+          <NavLink href="/#preis" label="Preis" closeMenu={closeMenu} />
           <Link
             href="/#kontakt"
             className="text-white relative group no-underline flex items-center"

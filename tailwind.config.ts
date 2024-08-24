@@ -13,28 +13,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1a202c', // Dunkles Grau für Headlines
-        secondary: '#4a5568', // Mittelgrau für Sub-Headlines und Texte
-        accent: '#2b6cb0', // Seriöses Blau für Akzente, Buttons, Links
-        background: '#f7fafc', // Sehr helles Grau für Hintergrund
-        border: '#e2e8f0', // Hellgrau für Ränder
-        light: '#edf2f7', // Sehr helles Grau für zusätzliche Akzente
+        primary: "#1a202c",
+        secondary: "#4a5568",
+        accent: "#2b6cb0",
+        background: "#f7fafc",
+        border: "#e2e8f0",
+        light: "#edf2f7",
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Moderne, gut lesbare Schriftart
-        serif: ['Merriweather', 'serif'], // Optional für klassischere Elemente
+        sans: ["Inter", "sans-serif"],
+        serif: ["Merriweather", "serif"],
       },
       fontSize: {
-        base: '16px', // Standardgröße für Fließtext
-        lg: '18px',  // Leicht größere Schrift für bessere Lesbarkeit
-        xl: '20px',  // Für wichtige Absätze
-        '2xl': '24px', // Sub-Headlines
-        '3xl': '30px', // Haupt-Headlines
-        '4xl': '36px', // Für besonders wichtige Headlines
+        base: "16px",
+        lg: "18px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "30px",
+        "4xl": "36px",
       },
       spacing: {
-        'section': '4rem', // Abstände zwischen den Sektionen
-        'paragraph': '1.5rem', // Abstand zwischen den Absätzen
+        section: "4rem",
+        paragraph: "1.5rem",
       },
     },
   },

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import VideoPlayer from "./components/video-player/video-player";
 import FloorPlan from "./components/floor-plan/floor-plan";
-import sampleImage from "./images/header.jpg";
+import energieausweisImage from "./images/energieausweis.jpg";
 import ogImage from "./images/floor-plans/og.jpg";
 import egImage from "./images/floor-plans/eg.jpg";
 import kgImage from "./images/floor-plans/kg.jpg";
@@ -10,33 +10,68 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 
 export default function Home() {
+  const grundrissItems = [
+    "Büro mit Venylboden und Heizkörper",
+    "Alle weiteren Räume mit Granitboden und Fußbodenheizung",
+    "Alle Fenster mit Außenrollos",
+    "Doppelgarage bietet weiteren Stauraum",
+    "Direkter Zugang von Garage ins Haus",
+    "Garage vollständig gefliest",
+    "Garage mit Waschbecken ausgestattet",
+    "Garagentore motorbetrieben",
+    "Direkter Zugang von Garage in den Garten",
+  ];
+  const obergeschossItems = [
+    "Starkstrom-, Wasser- und Abwasseranschlüssen in 'Eltern' vorhanden",
+    "Küchenvorbereitung ermöglicht den Umbau im Zweifamilienhaus",
+    "Ein Schlafzimmer mit Anschlüssen für Küche (Starkstrom, Wasser, Abwasser)",
+    "Alle Fenster mit Außenrollos",
+  ];
+  const kellerItems = [
+    "Freiliegende Außenfenster mit Außenrollos",
+    "Kellerzugang auch von Außen",
+    "Keller 3 und 4 sind nicht durch eine Wand getrennt",
+    "Garage unterkellert",
+  ];
+
   return (
     <>
       <Header />
       <main className="flex flex-col justify-between p-4 md:p-8 space-y-8 md:space-y-16">
         <section id="lage" className="container mb-0">
-          <h2 className="text-2xl font-bold text-primary">Lage & Eckdaten</h2>
+          <h2 className="text-2xl font-bold text-primary">Lage</h2>
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
             <iframe
-              className="w-full h-64 md:h-96"
+              className="w-full h-64 md:h-96 lg:col-span-2"
               src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Wilhelm-Schröder-Straße 9 grettstadt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
             <p className="text-base text-secondary leading-relaxed mb-paragraph">
               Dieses wunderbare Zuhause befindet sich in einer äußerst ruhigen
-              Spielstraße. Das Nachbargrundstück besteht aus einem unbebauten
-              Garten, der zusätzliche Ruhe und Privatsphäre gewährleistet. Alle
-              wichtigen Einrichtungen sind bequem zu Fuß erreichbar.{" "}
-              <span className="font-bold">Grundschule</span> und{" "}
-              <b>Kindergarten</b> sind nur 800 Meter entfernt, und ein
-              Supermarkt liegt in lediglich 240 Metern Entfernung.
+              <b> Spielstraße</b>. Das Nachbargrundstück besteht aus einem
+              unbebauten Garten, der zusätzliche Ruhe und Privatsphäre
+              gewährleistet. Alle wichtigen Einrichtungen sind bequem zu Fuß
+              erreichbar.
+              <b> Grundschule</b> und
+              <b> Kindergarten</b> sind nur 800 Meter entfernt, und ein
+              <b> Supermarkt</b> liegt in lediglich 240 Metern Entfernung.
             </p>
           </div>
+        </section>
+
+        <section id="aussenbereich" className="container">
+          <h2 className="text-2xl font-bold text-primary">Außenbereich</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
-            Das Haus steht auf einem Grundstück von 873 m² und bietet eine
-            Wohnfläche von 195 m² sowie eine zusätzliche Nutzfläche von 165 m².
-            Es wurde im Jahr 2000 erbaut und verfügt über eine zentrale
-            Ölheizung.
+            Im Außenbereich findet sich eine Terrassen mit Südausrichtung und
+            eine weitere Terasse mit Westausrichtung, so dass in jeder
+            Jahreszeit der geeignete Ort gewählt werden kann. Die Einfahrt hält
+            Platz für bis zu vier Fahrzeuge bereit. Eine Zisterne mit einem
+            Volumen von etwa 8 m³ sorgt für eine nachhaltige Gartenbewässerung.
+            Ein geräumiges, achteckiges Gartenhaus dient als Mittelpunkt des
+            Gartens und als Stauraum für Gartengeräte. Zwei überdachte
+            Außenflächen bieten Platz für Holzlagerung, Fahrräder oder
+            Kinderfahrzeuge. Ein separater Eingang durch eine Kelleraußentreppe
+            rundet das Angebot ab.
           </p>
           <iframe
             className="h-64 md:h-[500px] w-full rounded-lg shadow-md"
@@ -45,7 +80,7 @@ export default function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-          ></iframe>
+          ></iframe>{" "}
         </section>
 
         <section id="erdgeschoss" className="container">
@@ -53,82 +88,73 @@ export default function Home() {
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Das Erdgeschoss beeindruckt mit einem 14 m² großen Wintergarten, der
             durch seine Fußbodenheizung auch in der kalten Jahreszeit eine
-            gemütliche Atmosphäre bietet. Der offene und großzügige Wohn- und
-            Essbereich erstreckt sich über 44 m² und ist mit einem
-            zertifizierten Kaminofen ausgestattet. Die große Wohn-/Essküche
-            bietet 22 m² Platz und hat einen direkten Zugang zur Terrasse. Ein
-            12 m² großes Büro steht ebenfalls zur Verfügung. Mit Ausnahme des
-            Büros ist das gesamte Erdgeschoss mit Granitboden und
-            Fußbodenheizung ausgestattet. Ein direkter Zugang von der isolierten
-            Doppelgarage ins Haus sorgt dafür, dass man bei schlechtem Wetter
-            trocken ins Haus gelangt. Die motorbetriebenen Garagentore und eine
-            geflieste Garage mit Waschbecken bieten zusätzlichen Komfort. Alle
-            Fenster sind mit Außenrollos versehen.
+            gemütliche Atmosphäre bieten kann. Der offene und großzügige Wohn-
+            und Essbereich erstreckt sich über 44 m² und ist mit einem Kaminofen
+            ausgestattet. Die große Wohn-/Essküche bietet 22 m² Platz und hat
+            einen direkten Zugang zur Terrasse. Ein weiteres 12m² großes Zimmer
+            kann als Büro oder Kinderzimmer genutzt werden. Das Gästebadezimmer
+            im Ergeschoss ist mit Badewanne inklusive Duschwand ausgetattet.
           </p>
           <FloorPlan src={egImage} alt="Erdgeschoss Grundriss" />
+          <BulletPoints items={grundrissItems} />
         </section>
 
         <section id="obergeschoss" className="container">
           <h2 className="text-2xl font-bold text-primary">Obergeschoss</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
-            Im Obergeschoss befinden sich vier geräumige Schlafzimmer, die
-            jeweils zwischen 20 und 27 m² groß sind. Ein besonderes Highlight
-            ist ein Schlafzimmer, das mit Starkstrom-, Wasser- und
-            Abwasseranschlüssen ausgestattet ist und somit eine
-            Küchenvorbereitung bietet – ideal für den Umbau in zwei unabhängige
-            Einheiten. Ein Abstellraum mit Dachliegefenster und Außenrollo
-            bietet zusätzlichen Stauraum. Alle Fenster im Obergeschoss sind
-            ebenfalls mit Außenrollos versehen.
+            Im Obergeschoss befinden sich vier geräumige Zimmer, die jeweils
+            zwischen 20 und 27 m² groß sind. Das geräumiges Badezimmer mit
+            Fußbodenheizung ist mit einer großen Badewanne und einer Dusche
+            ausgestattet. Ein weiterer, kleiner, an ein Zimmer angrenzender Raum
+            mit Dachliegefenster kann als Abstellraum oder Ankleidezimmer
+            genutzt werden.
           </p>
           <FloorPlan src={ogImage} alt="Obergeschoss Grundriss" />
+          <BulletPoints items={obergeschossItems} />
         </section>
 
         <section id="untergeschoss" className="container">
           <h2 className="text-2xl font-bold text-primary">Untergeschoss</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Das Untergeschoss ist betoniert und zusätzlich isoliert. Es ist
-            komplett gefliest oder mit Vinylboden ausgestattet und bietet mit
-            einer unterkellerten Garage viel Stauraum. Ein großer Hobby- oder
-            Partyraum mit drei großen und freiliegenden Außenfenstern mit
-            Rollos, sehr gut isoliert und beheizbar, steht ebenfalls zur
+            entweder gefliest oder mit Vinylboden ausgestattet und bietet mit
+            einer unterkellerten Garage sehr viel Stauraum. Ein großer Hobby-
+            oder Partyraum (Keller 3 & 4) mit drei großen und freiliegenden
+            Außenfenstern, sehr gut isoliert und beheizbar, steht ebenfalls zur
             Verfügung. Dieser Raum ist mit Wasser- und Starkstromanschluss
-            ausgestattet. Ein separates Badezimmer mit Waschmaschinenanschluss
-            ist ebenfalls vorhanden.
+            ausgestattet. Ein separates Badezimmer mit Dusche und
+            Waschmaschinenanschluss ist ebenfalls vorhanden.
           </p>
           <FloorPlan src={kgImage} alt="Untergeschoss Grundriss" />
+          <BulletPoints items={kellerItems} />
         </section>
 
         <section id="dachboden" className="container">
           <h2 className="text-2xl font-bold text-primary">Dachboden</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Der Dachboden ist zusätzlich isoliert und das Dach ist vollflächig
-            mit Pavatex-Unterdeckplatten belegt.
+            mit Pavatex-Unterdeckplatten belegt. Er ist über eine Scherentreppe
+            erreichbar und bietet weiteren Stauraum.
           </p>
         </section>
 
-        <section id="aussenbereich" className="container">
-          <h2 className="text-2xl font-bold text-primary">Außenbereich</h2>
+        <section id="energieausweis" className="container">
+          <h2 className="text-2xl font-bold text-primary">Energieausweis</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
-            Im Außenbereich sind zwei Terrassen (einmal Südausrichtung und
-            einmal Westausrichtung), so dass in jeder Jahreszeit der geeignete
-            Ort gewählt werden kann. Die Einfahrt hält Platz für bis zu vier
-            Fahrzeuge bereit. Eine Zisterne mit einem Volumen von etwa 8 m³
-            sorgt für eine nachhaltige Gartenbewässerung. Ein geräumiges,
-            achteckiges, individuell angefertigtes Gartenhaus dient als
-            Mittelpunkt des Gartens und als Stauraum für Gartengeräte. Zwei
-            Terrassen und zwei überdachte Außenflächen bieten Platz für
-            Holzlagerung, Fahrräder oder Kinderfahrzeuge. Ein separater Eingang
-            durch eine Kelleraußentreppe rundet das Angebot ab.
+            todo
           </p>
           <Image
-            src={sampleImage}
-            alt="Außenbereich Bild"
+            src={energieausweisImage}
+            alt="Energieausweis"
             className="rounded-lg shadow-md w-full"
           />
-          <VideoPlayer
-            src="/videos/aussenbereich.mp4"
-            alt="Außenbereich Video"
-          />
+        </section>
+
+        <section id="preis" className="container">
+          <h2 className="text-2xl font-bold text-primary">Preis</h2>
+          <p className="text-base text-secondary leading-relaxed mb-paragraph">
+            todo
+          </p>
         </section>
 
         <section id="kontakt" className="container">
@@ -139,3 +165,32 @@ export default function Home() {
     </>
   );
 }
+
+interface BulletPointsProps {
+  items: string[];
+}
+
+const BulletPoints: React.FC<BulletPointsProps> = ({ items }) => {
+  const midPoint = Math.ceil(items.length / 2);
+  const firstColumnItems = items.slice(0, midPoint);
+  const secondColumnItems = items.slice(midPoint);
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+      <ul className="list-disc list-inside mb-0">
+        {firstColumnItems.map((item, index) => (
+          <li key={index} className="p-2">
+            {item}
+          </li>
+        ))}
+      </ul>
+      <ul className="list-disc list-inside mt-0">
+        {secondColumnItems.map((item, index) => (
+          <li key={index} className="p-2">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
