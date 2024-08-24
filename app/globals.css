@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply scroll-pt-[123px]  xl:scroll-pt-[136px];
+html { 
+  @apply xl:scroll-pt-[96px] scroll-pt-[81px];
 
   scroll-behavior: smooth;
 }

@@ -16,19 +16,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-30 bg-gray-800 bg-opacity-75 backdrop-blur-md shadow-md">
-      <div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center">
-        <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white py-2 md:py-4">
-          Einfamilienhaus <br />
-          <span className="text-xs sm:text-sm xl:text-lg font-light">
-            <span className="block">195 m² Wohnfläche</span>
-            <span className="block">165 m² Nutzfläche</span>
-            <span className="block">873 m² Grundstücksfläche</span>
-            <span className="block">Baujahr 2000</span>
-          </span>
+      <div className="max-w-screen-xl mx-auto p-3 flex justify-between items-center gap-4">
+        <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white py-2">
+          Exposé <br />
+          <div className="text-xs sm:text-sm xl:text-sm font-light flex flex-col gap-1">
+            <span>Einfamilienhaus</span>
+          </div>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-4 xl:space-x-8">
+        <div className="hidden lg:flex flex-wrap gap-6">
           <NavLink href="/#lage" label="Lage" />
           <NavLink href="/#aussenbereich" label="Außenbereich" />
           <NavLink href="/#erdgeschoss" label="Erdgeschoss" />

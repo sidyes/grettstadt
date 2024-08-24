@@ -1,5 +1,4 @@
 import Image from "next/image";
-import VideoPlayer from "./components/video-player/video-player";
 import FloorPlan from "./components/floor-plan/floor-plan";
 import energieausweisImage from "./images/energieausweis.jpg";
 import ogImage from "./images/floor-plans/og.jpg";
@@ -37,7 +36,21 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col justify-between p-4 md:p-8 space-y-8 md:space-y-16">
+      <main className="flex flex-col justify-between pt-0 p-4 md:p-8 space-y-8 md:space-y-16">
+        <div className="text-base md:text-xl flex justify-between gap-2 container mb-0 flex-wrap" id="start">
+          <span className="flex flex-col md:flex-row gap-2">
+            <b>195 m²</b> Wohnfläche
+          </span>
+          <span className="flex flex-col md:flex-row gap-2">
+            <b>165 m²</b> Nutzfläche
+          </span>
+          <span className="flex flex-col md:flex-row gap-2">
+            <b>873 m²</b> Grundstück
+          </span>
+          <span className="flex flex-col md:flex-row gap-2">
+            <b>Baujahr</b> 2000
+          </span>
+        </div>
         <section id="lage" className="container mb-0">
           <h2 className="text-2xl font-bold text-primary">Lage</h2>
 
@@ -46,7 +59,7 @@ export default function Home() {
               className="w-full h-64 md:h-96 lg:col-span-2"
               src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Wilhelm-Schröder-Straße 9 grettstadt&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
-            <p className="text-base text-secondary leading-relaxed mb-paragraph">
+            <p className="text-base text-secondary leading-relaxed mb-paragraph mt-0">
               Dieses wunderbare Zuhause befindet sich in einer äußerst ruhigen
               <b> Spielstraße</b>. Das Nachbargrundstück besteht aus einem
               unbebauten Garten, der zusätzliche Ruhe und Privatsphäre
@@ -177,14 +190,14 @@ const BulletPoints: React.FC<BulletPointsProps> = ({ items }) => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
-      <ul className="list-disc list-inside mb-0">
+      <ul className="list-disc list-outside my-0">
         {firstColumnItems.map((item, index) => (
           <li key={index} className="p-2">
             {item}
           </li>
         ))}
       </ul>
-      <ul className="list-disc list-inside mt-0">
+      <ul className="list-disc list-outside mt-0">
         {secondColumnItems.map((item, index) => (
           <li key={index} className="p-2">
             {item}
