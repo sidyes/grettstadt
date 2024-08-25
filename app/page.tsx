@@ -37,7 +37,10 @@ export default function Home() {
     <>
       <Header />
       <main className="flex flex-col justify-between pt-0 p-4 md:p-8 space-y-8 md:space-y-16">
-        <div className="text-base md:text-xl flex justify-between gap-2 container mb-0 flex-wrap" id="start">
+        <div
+          className="text-base md:text-xl flex justify-between gap-2 container mb-0 flex-wrap"
+          id="start"
+        >
           <span className="flex flex-col md:flex-row gap-2">
             <b>195 m²</b> Wohnfläche
           </span>
@@ -108,7 +111,11 @@ export default function Home() {
             kann als Büro oder Kinderzimmer genutzt werden. Das Gästebadezimmer
             im Ergeschoss ist mit Badewanne inklusive Duschwand ausgetattet.
           </p>
-          <FloorPlan src={egImage} alt="Erdgeschoss Grundriss" />
+          <FloorPlan
+            src={egImage}
+            alt="Erdgeschoss Grundriss"
+            degreeCompass={-40}
+          />
           <BulletPoints items={grundrissItems} />
         </section>
 
@@ -122,7 +129,11 @@ export default function Home() {
             mit Dachliegefenster kann als Abstellraum oder Ankleidezimmer
             genutzt werden.
           </p>
-          <FloorPlan src={ogImage} alt="Obergeschoss Grundriss" />
+          <FloorPlan
+            src={ogImage}
+            alt="Obergeschoss Grundriss"
+            degreeCompass={-40}
+          />
           <BulletPoints items={obergeschossItems} />
         </section>
 
@@ -138,7 +149,11 @@ export default function Home() {
             ausgestattet. Ein separates Badezimmer mit Dusche und
             Waschmaschinenanschluss ist ebenfalls vorhanden.
           </p>
-          <FloorPlan src={kgImage} alt="Untergeschoss Grundriss" />
+          <FloorPlan
+            src={kgImage}
+            alt="Untergeschoss Grundriss"
+            degreeCompass={-40}
+          />
           <BulletPoints items={kellerItems} />
         </section>
 
