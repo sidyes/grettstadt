@@ -23,7 +23,6 @@ export default function Home() {
   const obergeschossItems = [
     "Starkstrom-, Wasser- und Abwasseranschlüssen in 'Eltern' vorhanden",
     "Küchenvorbereitung ermöglicht den Umbau im Zweifamilienhaus",
-    "Ein Schlafzimmer mit Anschlüssen für Küche (Starkstrom, Wasser, Abwasser)",
     "Alle Fenster mit Außenrollos",
   ];
   const kellerItems = [
@@ -79,8 +78,8 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-primary">Außenbereich</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Im Außenbereich findet sich eine Terrassen mit Südausrichtung und
-            eine weitere Terasse mit Westausrichtung, so dass in jeder
-            Jahreszeit der geeignete Ort gewählt werden kann. Die Einfahrt hält
+            eine weitere Terrasse mit Westausrichtung, so dass in jeder
+            Tageszeit der geeignete Ort gewählt werden kann. Die Einfahrt hält
             Platz für bis zu vier Fahrzeuge bereit. Eine Zisterne mit einem
             Volumen von etwa 8 m³ sorgt für eine nachhaltige Gartenbewässerung.
             Ein geräumiges, achteckiges Gartenhaus dient als Mittelpunkt des
@@ -108,8 +107,8 @@ export default function Home() {
             und Essbereich erstreckt sich über 44 m² und ist mit einem Kaminofen
             ausgestattet. Die große Wohn-/Essküche bietet 22 m² Platz und hat
             einen direkten Zugang zur Terrasse. Ein weiteres 12m² großes Zimmer
-            kann als Büro oder Kinderzimmer genutzt werden. Das Gästebadezimmer
-            im Ergeschoss ist mit Badewanne inklusive Duschwand ausgetattet.
+            kann als Büro oder Gästezimmer genutzt werden. Das Gästebad im
+            Erdgeschoss ist mit Badewanne inklusive Duschwand ausgestattet.
           </p>
           <FloorPlan
             src={egImage}
@@ -123,7 +122,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-primary">Obergeschoss</h2>
           <p className="text-base text-secondary leading-relaxed mb-paragraph">
             Im Obergeschoss befinden sich vier geräumige Zimmer, die jeweils
-            zwischen 20 und 27 m² groß sind. Das geräumiges Badezimmer mit
+            zwischen 20 und 27 m² groß sind. Das geräumige Badezimmer mit
             Fußbodenheizung ist mit einer großen Badewanne und einer Dusche
             ausgestattet. Ein weiterer, kleiner, an ein Zimmer angrenzender Raum
             mit Dachliegefenster kann als Abstellraum oder Ankleidezimmer
