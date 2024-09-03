@@ -1,3 +1,5 @@
+"use client";
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import FloorPlan from "./components/floor-plan/floor-plan";
 import energieausweisImage from "./images/energieausweis.jpg";
@@ -7,8 +9,25 @@ import kgImage from "./images/floor-plans/kg.jpg";
 import Contact from "./components/contact/contact";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import { useEffect } from "react";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 
 export default function Home() {
+  useEffect(() => {
+    let lightbox = new PhotoSwipeLightbox({
+      gallery: "#energieausweis",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+
+    return () => {
+      lightbox.destroy();
+      lightbox = null as unknown as PhotoSwipeLightbox;
+    };
+  }, []);
+
   const grundrissItems = [
     "Büro mit Venylboden und Heizkörper",
     "Alle weiteren Räume mit Granitboden und Fußbodenheizung",
@@ -30,6 +49,39 @@ export default function Home() {
     "Kellerzugang auch von Außen",
     "Keller 3 und 4 sind nicht durch eine Wand getrennt",
     "Garage unterkellert",
+  ];
+
+  const energieausweisImages = [
+    {
+      largeURL: "/energy/Energieausweis-1.jpg",
+      thumbnailURL: "/energy/Energieausweis-1.jpg",
+      width: 1627,
+      height: 2304,
+    },
+    {
+      largeURL: "/energy/Energieausweis-2.jpg",
+      thumbnailURL: "/energy/Energieausweis-2.jpg",
+      width: 1683,
+      height: 2772,
+    },
+    {
+      largeURL: "/energy/Energieausweis-3.jpg",
+      thumbnailURL: "/energy/Energieausweis-3.jpg",
+      width: 1601,
+      height: 2312,
+    },
+    {
+      largeURL: "/energy/Energieausweis-4.jpg",
+      thumbnailURL: "/energy/Energieausweis-4.jpg",
+      width: 1630,
+      height: 2303,
+    },
+    {
+      largeURL: "/energy/Energieausweis-5.jpg",
+      thumbnailURL: "/energy/Energieausweis-5.jpg",
+      width: 1577,
+      height: 2306,
+    },
   ];
 
   return (
@@ -167,14 +219,32 @@ export default function Home() {
 
         <section id="energieausweis" className="container">
           <h2 className="text-2xl font-bold text-primary">Energieausweis</h2>
-          <p className="text-base text-secondary leading-relaxed mb-paragraph">
-            todo
-          </p>
-          <Image
-            src={energieausweisImage}
-            alt="Energieausweis"
-            className="rounded-lg shadow-md w-full"
-          />
+          <div
+            className="pswp-gallery grid grid-cols-1 md:grid-cols-3 gap-4 "
+            id="energieausweis"
+          >
+            {energieausweisImages.map((image, index) => (
+              <a
+                href={image.largeURL}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
+                key={"energieausweis-" + index}
+                target="_blank"
+                rel="noreferrer"
+                className="relative"
+              >
+                <Image
+                  src={image.thumbnailURL}
+                  alt={"energieausweis-" + index}
+                  quality="100"
+                  layout="responsive"
+                  height={600}
+                  width={300}
+                  className="object-cover object-center"
+                />
+              </a>
+            ))}
+          </div>
         </section>
 
         <section id="preis" className="container">
